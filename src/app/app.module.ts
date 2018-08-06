@@ -26,6 +26,9 @@ import { DueAmountsComponent } from './payments/due-amounts/due-amounts.componen
 import { PaidAmountsComponent } from './payments/paid-amounts/paid-amounts.component';
 import { PayNowComponent } from './payments/pay-now/pay-now.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { ManageUsersService } from './admin/manage-users.service';
+import { ManageTeamsService } from './admin/manage-teams.service';
+
 
 @NgModule({
   declarations: [
@@ -58,7 +61,7 @@ import { FooterComponent } from './shared/footer/footer.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [ManageUsersService,ManageTeamsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
