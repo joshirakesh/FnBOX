@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import { AppComponent } from './app.component';
 import { AdminToolbarComponent } from './admin/admin-toolbar/admin-toolbar.component';
 import { AdminSidenavComponent } from './admin/admin-sidenav/admin-sidenav.component';
@@ -28,7 +30,8 @@ import { PayNowComponent } from './payments/pay-now/pay-now.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ManageUsersService } from './admin/manage-users.service';
 import { ManageTeamsService } from './admin/manage-teams.service';
-
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -60,7 +63,10 @@ import { ManageTeamsService } from './admin/manage-teams.service';
   ],
   imports: [
     BrowserModule,
-    MDBBootstrapModule.forRoot()
+    BrowserAnimationsModule,
+    MDBBootstrapModule.forRoot(),
+    MatToolbarModule,
+    MatIconModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [ManageUsersService,ManageTeamsService],
