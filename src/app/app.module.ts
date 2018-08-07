@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppComponent } from './app.component';
 import { AdminToolbarComponent } from './admin/admin-toolbar/admin-toolbar.component';
 import { AdminSidenavComponent } from './admin/admin-sidenav/admin-sidenav.component';
@@ -59,8 +59,10 @@ import { ManageTeamsService } from './admin/manage-teams.service';
     FooterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MDBBootstrapModule.forRoot()
   ],
+  schemas: [ NO_ERRORS_SCHEMA ],
   providers: [ManageUsersService,ManageTeamsService],
   bootstrap: [AppComponent]
 })
