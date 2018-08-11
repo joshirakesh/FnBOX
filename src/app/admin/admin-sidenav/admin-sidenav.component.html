@@ -1,3 +1,48 @@
-<p>
-  admin-sidenav works!
-</p>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    fixedBottomGap=78
+    fixedTopGap=78
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+    <mat-nav-list class="test">
+      <a  mat-list-item href="#">
+        <i class="material-icons">
+            dashboard
+        </i>
+        
+        <span> Dashboard</span>
+      </a>
+      <a  mat-list-item href="#">
+          <i class="material-icons">
+              people
+          </i>
+          
+          <span> Team Management</span>
+      </a>
+      <a  mat-list-item href="#">
+          <i class="material-icons">
+              build
+          </i>
+          <span> User Management</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar *ngIf="isHandset$ | async" color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <!-- <span>sidebar</span>  here i can add breadcrumb navigation-->
+    </mat-toolbar>
+    <app-admin-dashboard></app-admin-dashboard>
+  </mat-sidenav-content>
+</mat-sidenav-container>

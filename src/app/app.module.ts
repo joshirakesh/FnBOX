@@ -32,6 +32,10 @@ import { ManageUsersService } from './admin/manage-users.service';
 import { ManageTeamsService } from './admin/manage-teams.service';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule,MatButtonModule} from '@angular/material';
+import {MatCardModule} from '@angular/material/card';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -66,7 +70,12 @@ import {MatIconModule} from '@angular/material/icon';
     BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule,
+    MatButtonModule,
+    MatCardModule,
+    AppRoutingModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [ManageUsersService,ManageTeamsService],
